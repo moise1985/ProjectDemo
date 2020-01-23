@@ -31,5 +31,11 @@ public class CustomerController {
 	public List<Customer> getAllCustomers() {
 		return customerService.getAllCustomers();
 	}
+	@RequestMapping(method = RequestMethod.DELETE, value="/customers/{id}")
+	public void deleteCustomer(@PathVariable String id) {
+		customerService.deleteCustomer(id);
+	}
+
+
 
 }
