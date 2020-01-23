@@ -22,6 +22,11 @@ public class CustomerController {
 		customerService.addCustomer(customer);
 	}
 
+	@RequestMapping(method = RequestMethod.PUT, value = "/customers/{id}")
+	public void updateCustomer(@RequestBody Customer customer, @PathVariable String id) {
+		customerService.updateCustomer(customer, id);
+	}
+
 	@RequestMapping(method = RequestMethod.GET, value = "/customers")
 	public List<Customer> getAllCustomers() {
 		return customerService.getAllCustomers();
