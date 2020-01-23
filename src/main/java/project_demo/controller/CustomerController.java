@@ -15,6 +15,11 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 
+	@RequestMapping("/customers/{id}")
+	public Optional<Customer> getCustomer(@PathVariable String id) {
+		return customerService.getCustomer(id);
+	}
+
 
 
 }
